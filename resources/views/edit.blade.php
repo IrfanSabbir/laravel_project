@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Employee</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+     
+<div class="container">
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        	<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title"><b>Edit Employee</b></h3>
+			 			</div>
+			 			<div class="panel-body">
+			    		<form role="form" method="post" action="{{ URL::to('/updateStore/'.$employee->id)}}">
+			    			{{ csrf_field()}}
+			    				
+			    					<div class="form-group">
+			                        <input type="text" name="name" class="form-control input-sm"
+                                     value="{{ $employee->name}}">
+			    					</div>
+			    				
+			    			
+                            
+			    			<div class="form-group">
+			    				<input type="email" name="email" class="form-control input-sm" 
+                                value="{{ $employee->email}}">
+			    			</div>
+
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="date" name="birth_date" class="form-control input-sm"
+                                        value="{{ $employee->birth_date}}">
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-">
+			    						<input type="number" name="salary" class="form-control input-sm"
+                                        value="{{ $employee->salary}}">
+			    					</div>
+			    				</div>
+			    			</div>
+			    			
+			    			<input type="submit" value="Update" class="btn btn-info btn-block">
+			    		
+			    		</form>
+			    	</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</body>
+</html>
